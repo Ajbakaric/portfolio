@@ -1,8 +1,9 @@
 import React from 'react';
 import {
   FaHtml5, FaCss3Alt, FaJs, FaReact,
-  FaGitAlt, FaGithub, FaBootstrap, FaTerminal
-} from 'react-icons/fa';
+  FaGitAlt, FaGithub, FaBootstrap, FaTerminal, FaServer
+} from 'react-icons/fa'; // <-- Make sure FaServer is included here
+
 import {
   SiPostgresql, SiTypescript, SiJest, SiWebpack,
   SiTailwindcss, SiHeroku, SiRubygems, SiRubyonrails
@@ -13,48 +14,66 @@ const iconStyle = "text-4xl text-indigo-400 hover:text-white transition duration
 export default function Skills() {
   return (
     <section id="skills" className="w-full px-6 py-20 bg-gray-100 dark:bg-[#0b0c2a] text-gray-900 dark:text-white">
-
-     <h2 className="text-4xl font-bold text-center mb-12 text-black dark:text-white">My Tech Stack</h2>
+      <h2 className="text-4xl font-bold text-center mb-12 text-black dark:text-white">My Tech Stack</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-center">
 
         {/* Languages & Databases */}
         <div>
-<h3 className="text-xl font-semibold mb-4 text-indigo-700 dark:text-indigo-300">
-Languages & Databases</h3>
+          <h3 className="text-xl font-semibold mb-4 text-indigo-700 dark:text-indigo-300">Languages & Databases</h3>
           <div className="grid grid-cols-3 gap-6 justify-items-center">
-            <FaHtml5 className={iconStyle} title="HTML" />
-            <FaCss3Alt className={iconStyle} title="CSS" />
-            <FaJs className={iconStyle} title="JavaScript" />
-            <SiTypescript className={iconStyle} title="TypeScript" />
-            <SiRubygems className={iconStyle} title="Ruby" />
-            <SiPostgresql className={iconStyle} title="PostgreSQL" />
+            {[
+              { icon: <FaHtml5 className={iconStyle} />, label: 'HTML' },
+              { icon: <FaCss3Alt className={iconStyle} />, label: 'CSS' },
+              { icon: <FaJs className={iconStyle} />, label: 'JavaScript' },
+              { icon: <SiTypescript className={iconStyle} />, label: 'TypeScript' },
+              { icon: <SiRubygems className={iconStyle} />, label: 'Ruby' },
+              { icon: <SiPostgresql className={iconStyle} />, label: 'PostgreSQL' }
+            ].map((item, index) => (
+              <div key={index} className="flex flex-col items-center">
+                {item.icon}
+                <span className="mt-2 text-sm text-black dark:text-white">{item.label}</span>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Frameworks & Libraries */}
         <div>
-         <h3 className="text-xl font-semibold mb-4 text-indigo-700 dark:text-indigo-300">
-Frameworks & Libraries</h3>
+          <h3 className="text-xl font-semibold mb-4 text-indigo-700 dark:text-indigo-300">Frameworks & Libraries</h3>
           <div className="grid grid-cols-3 gap-6 justify-items-center">
-            <SiRubyonrails className={iconStyle} title="Rails" />
-            <FaReact className={iconStyle} title="React" />
-            <SiJest className={iconStyle} title="Jest" />
-            <FaBootstrap className={iconStyle} title="Bootstrap" />
-            <SiTailwindcss className={iconStyle} title="Tailwind CSS" />
-            <SiWebpack className={iconStyle} title="Webpack" />
+            {[
+              { icon: <SiRubyonrails className={iconStyle} />, label: 'Rails' },
+              { icon: <FaReact className={iconStyle} />, label: 'React' },
+              { icon: <SiJest className={iconStyle} />, label: 'Jest' },
+              { icon: <FaBootstrap className={iconStyle} />, label: 'Bootstrap' },
+              { icon: <SiTailwindcss className={iconStyle} />, label: 'Tailwind CSS' },
+              { icon: <SiWebpack className={iconStyle} />, label: 'Webpack' }
+            ].map((item, index) => (
+              <div key={index} className="flex flex-col items-center">
+                {item.icon}
+                <span className="mt-2 text-sm text-black dark:text-white">{item.label}</span>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Dev Tools */}
         <div className="md:col-span-2">
-          <h3 className="text-xl font-semibold mb-4 text-indigo-700 dark:text-indigo-300">
-Dev Tools</h3>
-          <div className="grid grid-cols-4 gap-6 justify-items-center">
-            <FaGitAlt className={iconStyle} title="Git" />
-            <FaGithub className={iconStyle} title="GitHub" />
-            <SiHeroku className={iconStyle} title="Heroku" />
-            <FaTerminal className={iconStyle} title="Terminal / IDE" />
+          <h3 className="text-xl font-semibold mb-4 text-indigo-700 dark:text-indigo-300">Dev Tools</h3>
+          <div className="grid grid-cols-5 gap-6 justify-items-center">
+            {[
+             { icon: <FaGitAlt className={iconStyle} />, label: 'Git' },
+      { icon: <FaGithub className={iconStyle} />, label: 'GitHub' },
+      { icon: <SiHeroku className={iconStyle} />, label: 'Heroku' },
+      { icon: <FaTerminal className={iconStyle} />, label: 'Terminal / IDE' },
+      { icon: <FaServer className={iconStyle} />, label: 'Render' }, // Render added here
+    ].map((item, index) => (
+              <div key={index} className="flex flex-col items-center">
+                {item.icon}
+                <span className="mt-2 text-sm text-black dark:text-white">{item.label}</span>
+              </div>
+            ))}
           </div>
         </div>
 

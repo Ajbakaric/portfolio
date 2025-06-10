@@ -9,7 +9,7 @@ export default function Hero() {
     >
       <div className="text-center w-full">
         <h1 className="text-5xl md:text-6xl font-extrabold mb-4">
-          Hi, I'm Austin Bakaric
+         Austin Bakaric
         </h1>
         <p className="text-lg md:text-xl text-indigo-700 dark:text-indigo-200">
           Fullstack Developer & Creative Technologist
