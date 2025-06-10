@@ -12,13 +12,16 @@ const iconStyle = "text-4xl text-indigo-400 hover:text-white transition duration
 
 export default function Skills() {
   return (
-    <section id="skills" className="w-full px-6 py-20 bg-[#0b0c2a] text-white">
-      <h2 className="text-4xl font-bold text-center mb-12">My Tech Stack</h2>
+    <section id="skills" className="w-full px-6 py-20 bg-gray-100 dark:bg-[#0b0c2a] text-gray-900 dark:text-white">
+
+     <h2 className="text-4xl font-bold text-center mb-12 text-black dark:text-white">My Tech Stack</h2>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-center">
 
         {/* Languages & Databases */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 text-indigo-300">Languages & Databases</h3>
+<h3 className="text-xl font-semibold mb-4 text-indigo-700 dark:text-indigo-300">
+Languages & Databases</h3>
           <div className="grid grid-cols-3 gap-6 justify-items-center">
             <FaHtml5 className={iconStyle} title="HTML" />
             <FaCss3Alt className={iconStyle} title="CSS" />
@@ -31,7 +34,8 @@ export default function Skills() {
 
         {/* Frameworks & Libraries */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 text-indigo-300">Frameworks & Libraries</h3>
+         <h3 className="text-xl font-semibold mb-4 text-indigo-700 dark:text-indigo-300">
+Frameworks & Libraries</h3>
           <div className="grid grid-cols-3 gap-6 justify-items-center">
             <SiRubyonrails className={iconStyle} title="Rails" />
             <FaReact className={iconStyle} title="React" />
@@ -44,7 +48,8 @@ export default function Skills() {
 
         {/* Dev Tools */}
         <div className="md:col-span-2">
-          <h3 className="text-xl font-semibold mb-4 text-indigo-300">Dev Tools</h3>
+          <h3 className="text-xl font-semibold mb-4 text-indigo-700 dark:text-indigo-300">
+Dev Tools</h3>
           <div className="grid grid-cols-4 gap-6 justify-items-center">
             <FaGitAlt className={iconStyle} title="Git" />
             <FaGithub className={iconStyle} title="GitHub" />

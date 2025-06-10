@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+@keyframes slowPulse {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.1); opacity: 0.6; }
+}
+
+.animate-slowPulse {
+  animation: slowPulse 6s ease-in-out infinite;
+}
+
 html, body, #root {
   margin: 0;
   padding: 0;

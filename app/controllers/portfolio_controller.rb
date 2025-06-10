@@ -1,15 +1,27 @@
 class PortfolioController < ApplicationController
   def projects
     render json: [
-      { title: "BanterBox", description: "Fullstack chat app", link: "https://playful-croissant.netlify.app" },
-      { title: "Weather App", description: "Weather app using API", link: "https://github.com/Ajbakaric/weather-app" }
+      {
+        title: "BanterBox",
+        description: "A fullstack real-time chat app using Rails & React.",
+        link: "https://banterbox.example.com",
+        image: "https://placehold.co/600x400?text=BanterBox",
+        tags: ["Rails", "React", "WebSocket"]
+      },
+      {
+        title: "WeatherNow",
+        description: "Weather dashboard using the OpenWeather API.",
+        link: "https://weathernow.example.com",
+        image: "https://placehold.co/600x400?text=WeatherNow",
+        tags: ["JavaScript", "API"]
+      },
+      {
+        title: "Portfolio Site",
+        description: "This very site! Built with React + Tailwind + Rails API.",
+        link: "https://yoursite.netlify.app",
+        image: "https://placehold.co/600x400?text=Portfolio",
+        tags: ["React", "Tailwind", "Ruby"]
+      }
     ]
-  end
-
-  def contact
-    data = JSON.parse(request.body.read)
-    puts "New contact form submission:"
-    puts "Name: #{data['name']}, Email: #{data['email']}, Message: #{data['message']}"
-    render json: { success: true }
   end
 end
