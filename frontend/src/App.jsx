@@ -1,4 +1,3 @@
-// App.jsx
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -23,9 +22,19 @@ function App() {
     <div className="scroll-smooth bg-white text-black dark:bg-[#05041c] dark:text-white transition-colors duration-300">
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       <Hero />
-      <About />
+
+      {/* About + Floating Skills Card */}
+      <section className="relative w-full flex flex-col lg:flex-row items-start justify-between px-6 py-20 bg-white dark:bg-[#1b1d4d]">
+        <div className="w-full lg:w-1/2">
+          <About />
+        </div>
+        <div className="hidden lg:block w-full lg:w-1/2 lg:-mt-2.5">
+          <Skills />
+        </div>
+      </section>
+
+      {/* Remaining sections */}
       <Projects />
-      <Skills />
       <ContactForm />
       <Footer />
     </div>

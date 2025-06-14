@@ -11,7 +11,7 @@ export default function Cube() {
     if (!ref.current) return
 
     const rotate = Math.sin(t / 10000) * 200
-    const y = (1 + Math.sin(t / 1000)) * -50
+    const y = (1 + Math.sin(t / 1000)) * -20
     ref.current.style.transform = `translateY(${y}px) rotateX(${rotate}deg) rotateY(${rotate}deg)`
   })
 
