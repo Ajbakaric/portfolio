@@ -12,7 +12,7 @@ const iconStyle = "text-4xl text-indigo-400 hover:text-white transition duration
 
 export default function Skills() {
   return (
-    <section id="skills" className="-mt-10 relative z-10 px-6">
+    <section id="skills" className="-mt-1 relative z-1 px-6">
       <div className="lg:w-[490px] mx-auto rounded-xl bg-white/30 dark:bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl p-10 text-gray-900 dark:text-white">
 
         <h2 className="text-4xl font-bold text-center mb-12 text-black dark:text-white">My Tech Stack</h2>
@@ -89,7 +89,7 @@ export default function Skills() {
             <h3 className="text-xl font-semibold mb-4 text-indigo-700 dark:text-indigo-300">
               Dev Tools
             </h3>
-            <div className="grid grid-cols-4 gap-6 justify-items-center">
+            <div className="grid grid-cols-5 gap-6 justify-items-center">
               <div className="flex flex-col items-center">
                 <FaGitAlt className={iconStyle} />
                 <span className="mt-2 text-sm">Git</span>

@@ -28,7 +28,7 @@ function App() {
         <div className="w-full lg:w-1/2">
           <About />
         </div>
-        <div className="hidden lg:block w-full lg:w-1/2 lg:-mt-2.5">
+        <div className="hidden lg:block w-full lg:w-1/2 lg:-mt-3">
           <Skills />
         </div>
       </section>

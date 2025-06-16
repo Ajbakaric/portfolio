@@ -11,7 +11,7 @@ class PortfolioController < ApplicationController
       {
         title: "WeatherNow",
         description: "Weather dashboard using the OpenWeather API.",
-        link: "https://weathernow.example.com",
+        link: "https://github.com/Ajbakaric/Weather-App?tab=readme-ov-file",
         image: "https://placehold.co/600x400?text=WeatherNow",
         tags: ["JavaScript", "API"]
       },
