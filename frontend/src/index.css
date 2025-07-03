@@ -93,16 +93,3 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-@media (prefers-color-scheme: dark) { 
-  html {
-    background-color: #05041c;
-    background-image: url("your dark pattern here");
-  }
-}
-
-@media (prefers-color-scheme: light) { 
-  html {
-    background-color: #C0F7FF;
-    background-image: url("your light pattern here");
-  }
-}
