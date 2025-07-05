@@ -6,6 +6,7 @@ import Projects from './components/Projects';
 import Resume from './components/Resume';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
+import Header from './components/Header';
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -19,7 +20,7 @@ function App() {
   }, [darkMode]);
 
   return (
-    <div className="relative scroll-smooth text-black dark:text-white transition-colors duration-300">
+    <div className="relative w-full min-h-screen overflow-hidden scroll-smooth text-black dark:text-white transition-colors duration-300">
 
       {/* Background Pattern */}
       <div
@@ -32,12 +33,12 @@ function App() {
           opacity: 0.15,
         }}
       ></div>
-
+<Header />
       {/* Hero Section with Spline */}
    <Hero />
 
 <div className="relative z-10 bg-white dark:bg-[#05041c]">
-  
+  <Header />
   <section id="about">
     <div className="...">
       <About />
