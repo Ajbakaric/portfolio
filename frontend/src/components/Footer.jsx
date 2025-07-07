@@ -8,34 +8,56 @@ export default function Footer() {
       <p className="text-xs mt-2">
         Cube animation by{' '}
         <a
-          href="https://www.framer.com/motion/use-animation-frame/"
+          href="https://app.spline.design/community/file/02cb429e-740b-43c8-a4e6-97ee6de7f9f8"
           target="_blank"
           rel="noopener noreferrer"
           className="underline"
         >
-          Matt Perry
+          Sanket Khairnar
         </a>{' '}
-        using <code>useAnimationFrame</code> from Framer Motion.
+        using Spline.
       </p>
 
       <p className="text-xs mt-1">
         Background photo by{' '}
         <a
-          href="https://unsplash.com/@hjrivas87"
+          href="https://unsplash.com/@_debs_"
           target="_blank"
           rel="noopener noreferrer"
           className="underline"
         >
-          Héctor J. Rivas
+          Debora Pilati
         </a>{' '}
         on{' '}
         <a
-          href="https://unsplash.com/photos/1FxMET2U5dU"
+          href="https://unsplash.com/photos/blue-and-white-striped-textile-dOG0z4-gqp0"
           target="_blank"
           rel="noopener noreferrer"
           className="underline"
         >
           Unsplash
+        </a>
+        .
+      </p>
+
+      <p className="text-xs mt-1">
+        Email icon by{' '}
+        <a
+          href="https://pixabay.com/users/Clker-Free-Vector-Images-3736/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          Clker-Free-Vector-Images
+        </a>{' '}
+        on{' '}
+        <a
+          href="https://pixabay.com/vectors/letter-icon-email-message-mail-1132703/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          Pixabay
         </a>
         .
       </p>

@@ -17,19 +17,29 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="py-20 px-6 bg-gradient-to-br from-indigo-100 to-indigo-300 dark:from-[#0e0f2c] dark:to-[#1b1d4d]">
-      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-start gap-12">
+    <section id="contact" className="py-20 px-6 bg-sky-50 text-blue-900 relative overflow-hidden">
+      
+      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-start gap-12 relative z-10">
         
         {/* Left Side: Info & Socials */}
-        <div className="w-full lg:w-1/2 text-black dark:text-white space-y-6">
-          <h2 className="text-4xl font-bold mb-4">Contact Me</h2>
-          <p className="text-lg max-w-md">
+        <div className="w-full lg:w-1/2 space-y-6 relative">
+          
+          {/* Faded Envelope Behind Title */}
+          <img
+            src="/images/letter-1132703_1280.png"
+            alt="Envelope"
+            className="absolute right-0 top-0 w-60 opacity-10 -rotate-12 -translate-x-8 -translate-y-4 pointer-events-none select-none hidden md:block"
+          />
+
+          <h2 className="text-4xl font-bold text-sky-700 relative z-10">Contact Me</h2>
+          <p className="text-lg max-w-md text-blue-800">
             I'm always open to connecting! Feel free to reach out via the form or through my socials below.
           </p>
+          
           <div className="space-y-2">
             <div className="flex items-center gap-3">
               <span className="font-semibold">Email:</span>
-              <a href="mailto:youremail@example.com" className="text-indigo-700 dark:text-indigo-300 hover:underline">
+              <a href="mailto:youremail@example.com" className="text-sky-600 hover:underline">
                 youremail@example.com
               </a>
             </div>
@@ -41,7 +51,7 @@ export default function ContactForm() {
               href="https://github.com/yourgithub"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-indigo-500 hover:bg-indigo-600 text-white transition"
+              className="p-3 rounded-full bg-sky-600 hover:bg-sky-700 text-white transition"
             >
               <FaGithub size={20} />
             </a>
@@ -49,7 +59,7 @@ export default function ContactForm() {
               href="https://linkedin.com/in/yourlinkedin"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-indigo-500 hover:bg-indigo-600 text-white transition"
+              className="p-3 rounded-full bg-sky-600 hover:bg-sky-700 text-white transition"
             >
               <FaLinkedin size={20} />
             </a>
@@ -58,39 +68,37 @@ export default function ContactForm() {
 
         {/* Right Side: Form */}
         <div className="w-full lg:w-1/2">
-          <div className="bg-white dark:bg-[#1b1d4d] p-8 rounded-lg shadow-lg">
-            {submitted ? (
-              <p className="text-center text-green-600 dark:text-green-400">Thanks for reaching out!</p>
-            ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                <input
-                  name="name"
-                  value={form.name}
-                  onChange={handleChange}
-                  placeholder="Name"
-                  className="p-3 border border-gray-300 dark:border-indigo-800 rounded bg-white dark:bg-[#1b1d4d] text-black dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400"
-                />
-                <input
-                  name="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  placeholder="Email"
-                  className="p-3 border border-gray-300 dark:border-indigo-800 rounded bg-white dark:bg-[#1b1d4d] text-black dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400"
-                />
-                <textarea
-                  name="message"
-                  value={form.message}
-                  onChange={handleChange}
-                  placeholder="Message"
-                  rows={5}
-                  className="p-3 border border-gray-300 dark:border-indigo-800 rounded bg-white dark:bg-[#1b1d4d] text-black dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400"
-                />
-                <button className="bg-indigo-600 text-white py-3 rounded hover:bg-indigo-700 transition">
-                  Send
-                </button>
-              </form>
-            )}
-          </div>
+          {submitted ? (
+            <p className="text-center text-green-700 text-xl">Thanks for reaching out!</p>
+          ) : (
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+              <input
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+                placeholder="Name"
+                className="p-3 border border-blue-300 rounded bg-white text-blue-900 placeholder:text-blue-700/50"
+              />
+              <input
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                placeholder="Email"
+                className="p-3 border border-blue-300 rounded bg-white text-blue-900 placeholder:text-blue-700/50"
+              />
+              <textarea
+                name="message"
+                value={form.message}
+                onChange={handleChange}
+                placeholder="Message"
+                rows={5}
+                className="p-3 border border-blue-300 rounded bg-white text-blue-900 placeholder:text-blue-700/50"
+              />
+              <button className="bg-sky-600 text-white py-3 rounded hover:bg-sky-700 transition">
+                Send
+              </button>
+            </form>
+          )}
         </div>
       </div>
     </section>
