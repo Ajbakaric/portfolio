@@ -111,7 +111,6 @@ export default function Resume() {
             <li className="bg-sky-200 px-3 py-1 rounded-full text-sm">Jest</li>
             <li className="bg-sky-200 px-3 py-1 rounded-full text-sm">Netlify / Render</li>
             <li className="bg-sky-200 px-3 py-1 rounded-full text-sm">Git & GitHub</li>
-            <li className="bg-sky-200 px-3 py-1 rounded-full text-sm">Figma</li>
             <li className="bg-sky-200 px-3 py-1 rounded-full text-sm">Vite</li>
             <li className="bg-sky-200 px-3 py-1 rounded-full text-sm">Heroku</li>
           </ul>
