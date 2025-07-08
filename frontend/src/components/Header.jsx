@@ -9,6 +9,8 @@ export default function Header() {
 
   return (
     <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[80%] max-w-2xl px-4 py-2 bg-white/30 backdrop-blur-md rounded-xl shadow-md flex justify-between items-center">
+
+
       
       {/* Logo */}
       <a
@@ -25,36 +27,38 @@ export default function Header() {
       </a>
 
       {/* Nav */}
-      <nav className="flex gap-4 text-sm font-medium text-blue-900">
-        <a
-          href="#about"
-          onClick={(e) => handleSmoothScroll(e, 'about')}
-          className="hover:text-blue-600 transition"
-        >
-          About
-        </a>
-        <a
-          href="#projects"
-          onClick={(e) => handleSmoothScroll(e, 'projects')}
-          className="hover:text-blue-600 transition"
-        >
-          Projects
-        </a>
-        <a
-          href="#resume"
-          onClick={(e) => handleSmoothScroll(e, 'resume')}
-          className="hover:text-blue-600 transition"
-        >
-          CV
-        </a>
-        <a
-          href="#contact"
-          onClick={(e) => handleSmoothScroll(e, 'contact')}
-          className="hover:text-blue-600 transition"
-        >
-          Contact
-        </a>
-      </nav>
+   <nav className="flex gap-4 text-sm font-medium text-blue-900 dark:text-blue-900">
+  <a
+    href="#about"
+    onClick={(e) => handleSmoothScroll(e, 'about')}
+    className="hover:text-blue-600 transition"
+  >
+    About
+  </a>
+  <a
+    href="#projects"
+    onClick={(e) => handleSmoothScroll(e, 'projects')}
+    className="hover:text-blue-600 transition"
+  >
+    Projects
+  </a>
+  <a
+    href="#resume"
+    onClick={(e) => handleSmoothScroll(e, 'resume')}
+    className="hover:text-blue-600 transition"
+  >
+    CV
+  </a>
+  <a
+    href="#contact"
+    onClick={(e) => handleSmoothScroll(e, 'contact')}
+    className="hover:text-blue-600 transition"
+  >
+    Contact
+  </a>
+</nav>
+
+
     </header>
   );
 }

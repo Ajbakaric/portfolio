@@ -53,7 +53,6 @@ function App() {
 
             <section id="projects">
               <Projects />
-              <div className="w-full h-8 bg-gradient-to-b from-sky-50 to-transparent"></div>
             </section>
 
             <section id="resume">

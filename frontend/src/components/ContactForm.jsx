@@ -39,8 +39,8 @@ export default function ContactForm() {
           <div className="space-y-2">
             <div className="flex items-center gap-3">
               <span className="font-semibold">Email:</span>
-              <a href="mailto:youremail@example.com" className="text-sky-600 hover:underline">
-                youremail@example.com
+              <a href="mailto:bakaric.dev@gmail.com" className="text-sky-600 hover:underline">
+                bakaric.dev@gmail.com
               </a>
             </div>
           </div>
@@ -48,7 +48,7 @@ export default function ContactForm() {
           {/* Social Icons */}
           <div className="flex gap-4 mt-6">
             <a
-              href="https://github.com/yourgithub"
+              href="https://github.com/Ajbakaric"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-sky-600 hover:bg-sky-700 text-white transition"
@@ -56,7 +56,7 @@ export default function ContactForm() {
               <FaGithub size={20} />
             </a>
             <a
-              href="https://linkedin.com/in/yourlinkedin"
+              href="https://www.linkedin.com/in/austin-bakaric-891994353/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-sky-600 hover:bg-sky-700 text-white transition"
@@ -83,7 +83,7 @@ export default function ContactForm() {
                 name="email"
                 value={form.email}
                 onChange={handleChange}
-                placeholder="Email"
+                placeholder="Your Email"
                 className="p-3 border border-blue-300 rounded bg-white text-blue-900 placeholder:text-blue-700/50"
               />
               <textarea

@@ -52,7 +52,7 @@ export default function Projects() {
                 href={proj.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 px-4 py-2 rounded bg-sky-600 hover:bg-sky-700 text-white transition"
+                className="mt-4 px-4 py-2 rounded bg-sky-600 hover:bg-teal-100 text-white transition"
               >
                 View Project
               </a>
