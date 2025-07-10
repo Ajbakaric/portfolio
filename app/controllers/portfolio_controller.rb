@@ -3,7 +3,7 @@ class PortfolioController < ApplicationController
     render json: [
         {
         title: "Portfolio",
-        description: "A browser-based implementation of the classic Battleship game built with vanilla JavaScript. Includes dynamic DOM rendering, modular code architecture, and player vs. computer gameplay logic.",
+        description: "This project is designed to showcase my skills as a Fullstack Developer & Creative Technologist and highlight selected projects, technologies, and contact options all wrapped in a modern, interactive UI with custom animations and 3D effects.",
         link: "https://project-battleship.netlify.app/",
         image: "/images/personal-site.png",
 
