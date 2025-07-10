@@ -3,7 +3,9 @@ import React from 'react';
 export default function Footer() {
   return (
     <footer className="text-center text-sm text-gray-600 bg-white py-6 shadow-inner">
-      <div className="text-gray-600">&copy; {new Date().getFullYear()} Austin Bakaric. All rights reserved.</div>
+      <div className="text-gray-600">
+        &copy; {new Date().getFullYear()} Austin Bakaric. All rights reserved.
+      </div>
 
       <p className="text-xs mt-2 text-gray-500">
         Cube animation by{' '}

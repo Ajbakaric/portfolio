@@ -31,10 +31,10 @@ function App() {
       <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundColor: "#C0F7FF",
+          backgroundColor: '#C0F7FF',
           backgroundImage: `url("data:image/svg+xml,%3Csvg ... %3E")`, // insert your pattern
-          backgroundAttachment: "fixed",
-          backgroundSize: "cover",
+          backgroundAttachment: 'fixed',
+          backgroundSize: 'cover',
           opacity: 0.15,
         }}
       ></div>

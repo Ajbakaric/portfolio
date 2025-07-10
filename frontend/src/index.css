@@ -1,9 +1,16 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* Custom slow pulse animation (already present) */
 @keyframes slowPulse {
-  0%, 100% { transform: scale(1); opacity: 0.3; }
-  50% { transform: scale(1.1); opacity: 0.6; }
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.6;
+  }
 }
 
 .animate-slowPulse {
@@ -12,8 +19,12 @@
 
 /* 🔁 NEW: Spin keyframe for logo preloader */
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Optional: Utility class if you want to use it via className instead of inline */
@@ -22,7 +33,9 @@
 }
 
 /* Layout resets */
-html, body, #root {
+html,
+body,
+#root {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -88,7 +101,9 @@ button {
   background-color: #3b82f6;
   color: white;
   cursor: pointer;
-  transition: background-color 0.25s, border-color 0.25s;
+  transition:
+    background-color 0.25s,
+    border-color 0.25s;
 }
 button:hover {
   background-color: #2563eb;

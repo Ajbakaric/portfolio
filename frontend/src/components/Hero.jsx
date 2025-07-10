@@ -23,7 +23,9 @@ export default function Hero() {
       )}
 
       {/* Spline Background */}
-      <div className={`${loading ? 'invisible' : 'visible'} absolute inset-0 z-0`}>
+      <div
+        className={`${loading ? 'invisible' : 'visible'} absolute inset-0 z-0`}
+      >
         <Spline
           scene="https://prod.spline.design/iVEaathZeu7wOZdg/scene.splinecode"
           onLoad={() => setLoading(false)}
@@ -35,7 +37,9 @@ export default function Hero() {
         <div className="absolute bottom-6 z-10">
           <button
             onClick={() =>
-              document.getElementById('about').scrollIntoView({ behavior: 'smooth' })
+              document
+                .getElementById('about')
+                .scrollIntoView({ behavior: 'smooth' })
             }
             className="animate-bounce text-white hover:text-indigo-300 transition"
             style={{ fontSize: '30px' }}

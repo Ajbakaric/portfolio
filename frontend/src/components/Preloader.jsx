@@ -8,7 +8,7 @@ export default function Preloader() {
         alt="Loading..."
         className="w-24 h-24"
         style={{
-          animation: 'spin 3s linear infinite'
+          animation: 'spin 3s linear infinite',
         }}
       />
       <p className="text-black text-lg font-medium">Loading...</p>
