@@ -93,7 +93,11 @@ export default function ContactForm() {
               Thanks for reaching out!
             </p>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            <form
+              data-testid="contact-form"
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-4"
+            >
               <input type="hidden" name="_captcha" value="false" />
               <input
                 name="name"
