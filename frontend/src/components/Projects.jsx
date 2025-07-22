@@ -4,12 +4,14 @@ import { motion } from 'framer-motion';
 export default function Projects() {
   const [projects, setProjects] = useState([]);
 
-  useEffect(() => {
-    fetch('http://localhost:3000/projects')
-      .then((res) => res.json())
-      .then(setProjects)
-      .catch((err) => console.error('Failed to load projects:', err));
-  }, []);
+ useEffect(() => {
+  const apiBase = import.meta.env.VITE_API_URL || '';
+  fetch(`${apiBase}/projects`)
+    .then((res) => res.json())
+    .then(setProjects)
+    .catch((err) => console.error('Failed to load projects:', err));
+}, []);
+
 
   return (
     <section
