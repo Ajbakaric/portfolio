@@ -14,7 +14,7 @@ export default function Resume() {
 
       <div className="flex gap-4 mt-6 mb-8">
         <a
-          href="/public/Resume.pdf"
+          href="/Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="px-6 py-2 rounded bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition"
@@ -22,7 +22,7 @@ export default function Resume() {
           View Resume
         </a>
         <a
-          href="/public/Resume.pdf"
+          href="/Resume.pdf"
           download
           className="px-6 py-2 rounded bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition"
         >

@@ -49,7 +49,7 @@ export default function About() {
             Hire Me
           </a>
           <a
-            href="/public/Resume.pdf"
+            href="/Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-2 rounded bg-sky-600 text-white font-semibold hover:bg-indigo-700 transition"
