@@ -23,4 +23,13 @@ class PortfolioController < ApplicationController
       render plain: "Only allowed in production."
     end
   end
+
+  def wipe_projects
+    if Rails.env.production?
+      Project.destroy_all
+      render plain: "All projects wiped!"
+    else
+      render plain: "Only allowed in production."
+    end
+  end
 end
