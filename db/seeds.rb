@@ -1,7 +1,7 @@
 Project.create!(
   title: "Portfolio",
   description: "This project is designed to showcase my skills as a Fullstack Developer & Creative Technologist...",
-  link: "https://project-battleship.netlify.app/",
+  link: "https://portfolio-x1ib.onrender.com/",
   image: "/images/personal-site.png",
   tags: "JavaScript, API"
 )

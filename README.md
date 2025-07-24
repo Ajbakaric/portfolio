@@ -1,4 +1,3 @@
-
 #  Developer Portfolio
 
 Welcome to my personal portfolio website!  
@@ -11,7 +10,7 @@ This project is designed to showcase my skills as a **Fullstack Developer & Crea
 - Fully responsive React + Tailwind CSS layout  
 - Smooth dark/light mode toggle  
 - Animated **Spline** 3D hero section  
-- Dynamic project carousel display  
+- Dynamic project display  
 - AJAX-powered **contact form** via FormSubmit (no backend)  
 - Direct links to GitHub, LinkedIn, and downloadable resume  
 - Custom SVG + pattern background  
@@ -21,12 +20,13 @@ This project is designed to showcase my skills as a **Fullstack Developer & Crea
 
 ## Demo
 
- **Live Site**: (in progress)
+ **Live Site**: [LIVE DEMO](https://portfolio-x1ib.onrender.com/)
 
 **Screenshots**:
-- ![Hero Section Screenshot](screenshots/hero-section.png)
-- ![Projects Carousel Screenshot](screenshots/projects-carousel.png)
-- ![Contact Form Screenshot](screenshots/contact-form.png)
+- ![Hero Section Screenshot](/frontend/public/screenshots/hero.png)
+- ![About Section Screenshot](/frontend/public/screenshots/about.png)
+- ![Projects  Screenshot](frontend/public/screenshots/projects.png)
+- ![Contact Form Screenshot](frontend/public/screenshots/contact.png)
 
 ---
 
@@ -93,24 +93,6 @@ Swap the Spline scene link in `Hero.jsx`:
 <Spline scene="https://prod.spline.design/YOUR-SCENE-ID/scene.splinecode" />
 ```
 
----
-
-##  Deployment
-
-You can deploy this project on platforms like:
-
-* **Netlify**
-* **Vercel**
-* **GitHub Pages**
-
-For Netlify/Vercel:
-
-1️⃣ Push your project to GitHub.
-2️⃣ Connect your GitHub repo on the Netlify/Vercel dashboard.
-3️⃣ Set build command: `npm run build`
-4️⃣ Set publish directory: `dist` (if using Vite)
-
----
 
 ##  Developer Notes
 
