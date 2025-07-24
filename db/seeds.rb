@@ -1,3 +1,5 @@
+Project.destroy_all
+
 Project.create!(
   title: "Portfolio",
   description: "This project is designed to showcase my skills as a Fullstack Developer & Creative Technologist...",
