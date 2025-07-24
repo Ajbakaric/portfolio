@@ -10,4 +10,13 @@ class PortfolioController < ApplicationController
       }
     end
   end
+
+  def run_seed
+    if Rails.env.production?
+      load Rails.root.join('db/seeds.rb')
+      render plain: "Database seeded!"
+    else
+      render plain: "Only allowed in production."
+    end
+  end
 end
