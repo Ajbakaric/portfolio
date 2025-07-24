@@ -1,13 +1,30 @@
 class PortfolioController < ApplicationController
   def projects
-    render json: Project.all.map do |p|
-      {
-        title: p.title,
-        description: p.description,
-        link: p.link,
-        image: p.image,
-        tags: p.tags&.split(',').map(&:strip)  # safely split tags string into array
+    projects = Project.all
+
+    Rails.logger.info "Projects count: #{projects.count}"
+
+    if projects.any?
+      render json: projects.map { |p|
+        {
+          title: p.title,
+          description: p.description,
+          link: p.link,
+          image: p.image,
+          tags: p.tags&.split(',').map(&:strip)  # safely split tags string into array
+        }
       }
+    else
+      # Dummy fallback project if DB is empty
+      render json: [
+        {
+          title: "Test Project",
+          description: "This is a fallback project because your database is empty.",
+          link: "https://example.com",
+          image: "https://via.placeholder.com/600x400",
+          tags: ["Rails", "React", "Tailwind"]
+        }
+      ]
     end
   end
 
