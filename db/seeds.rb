@@ -1,0 +1,39 @@
+projects = [
+  {
+    title: "Portfolio",
+    description: "This project is designed to showcase my skills as a Fullstack Developer & Creative Technologist...",
+    link: "https://portfolio-x1ib.onrender.com/",
+    image: "/images/personal-site.png",
+    tags: "JavaScript, API"
+  },
+  {
+    title: "BanterBox",
+    description: "A real-time fullstack messaging app built with Ruby on Rails and React...",
+    link: "https://banterbox-fullstack.onrender.com/",
+    image: "/images/banterboximg.png",
+    tags: "Rails, React, WebSocket"
+  },
+  {
+    title: "WeatherNow",
+    description: "A responsive weather dashboard using JavaScript and the Visual Crossing API...",
+    link: "https://weathernow-appnow.netlify.app/",
+    image: "/images/homepage.png",
+    tags: "JavaScript, API"
+  },
+  {
+    title: "Project Battleship",
+    description: "A browser-based implementation of the classic Battleship game...",
+    link: "https://project-battleship.netlify.app/",
+    image: "/images/battleship.png",
+    tags: "JavaScript, API"
+  }
+]
+
+projects.each do |attrs|
+  Project.find_or_create_by!(title: attrs[:title]) do |project|
+    project.description = attrs[:description]
+    project.link = attrs[:link]
+    project.image = attrs[:image]
+    project.tags = attrs[:tags]
+  end
+end
