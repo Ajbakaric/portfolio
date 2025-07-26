@@ -1,31 +1,27 @@
-Project.create!(
-  title: "Portfolio",
-  description: "This project is designed to showcase my skills as a Fullstack Developer & Creative Technologist...",
-  link: "https://portfolio-x1ib.onrender.com/",
-  image: "/images/personal-site.png",
-  tags: "JavaScript, API"
-)
+Project.find_or_create_by(title: "Portfolio") do |p|
+  p.description = "This project is designed to showcase my skills as a Fullstack Developer & Creative Technologist..."
+  p.link = "https://portfolio-x1ib.onrender.com/"
+  p.image = "/images/personal-site.png"
+  p.tags = "JavaScript, API"
+end
 
-Project.create!(
-  title: "BanterBox",
-  description: "A real-time fullstack messaging app built with Ruby on Rails and React...",
-  link: "https://banterbox-fullstack.onrender.com/",
-  image: "/images/banterboximg.png",
-  tags: "Rails, React, WebSocket" # CHANGED from array to string
-)
+Project.find_or_create_by(title: "BanterBox") do |p|
+  p.description = "A real-time fullstack messaging app built with Ruby on Rails and React..."
+  p.link = "https://banterbox-fullstack.onrender.com/"
+  p.image = "/images/banterboximg.png"
+  p.tags = "Rails, React, WebSocket"
+end
 
-Project.create!(
-  title: "WeatherNow",
-  description: "A responsive weather dashboard using JavaScript and the Visual Crossing API...",
-  link: "https://weathernow-appnow.netlify.app/",
-  image: "/images/homepage.png",
-  tags: "JavaScript, API"
-)
+Project.find_or_create_by(title: "WeatherNow") do |p|
+  p.description = "A responsive weather dashboard using JavaScript and the Visual Crossing API..."
+  p.link = "https://weathernow-appnow.netlify.app/"
+  p.image = "/images/homepage.png"
+  p.tags = "JavaScript, API"
+end
 
-Project.create!(
-  title: "Project Battleship",
-  description: "A browser-based implementation of the classic Battleship game...",
-  link: "https://project-battleship.netlify.app/",
-  image: "/images/battleship.png",
-  tags: "JavaScript, API"
-)
+Project.find_or_create_by(title: "Project Battleship") do |p|
+  p.description = "A browser-based implementation of the classic Battleship game..."
+  p.link = "https://project-battleship.netlify.app/"
+  p.image = "/images/battleship.png"
+  p.tags = "JavaScript, API"
+end

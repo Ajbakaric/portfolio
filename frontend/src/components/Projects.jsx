@@ -8,7 +8,10 @@ export default function Projects() {
   const apiBase = import.meta.env.VITE_API_URL || '';
   fetch(`${apiBase}/projects`)
     .then((res) => res.json())
-    .then(setProjects)
+    .then((data) => {
+      console.log("🔥 /projects response:", data);
+      setProjects(data);
+    })
     .catch((err) => console.error('Failed to load projects:', err));
 }, []);
 
