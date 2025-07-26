@@ -1,7 +1,6 @@
-# Clear all existing records
+puts "🌱 Seeding database..."
 Project.delete_all
 
-# Define your projects
 projects = [
   {
     title: "Portfolio",
@@ -33,7 +32,8 @@ projects = [
   }
 ]
 
-# Seed new data
 projects.each do |attrs|
   Project.create!(attrs)
 end
+
+puts "✅ Done seeding."
