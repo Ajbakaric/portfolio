@@ -24,9 +24,8 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: <%= ENV["DB_HOST"] %>
+  host: dpg-d1tvinh5pdvs73d6a8o0-a.oregon-postgres.render.com
   port: 5432
-  database: <%= ENV["DB_NAME"] %>
-  username: <%= ENV["DB_USERNAME"] %>
-  password: <%= ENV["DB_PASSWORD"] %>
-
+  database: portfolio_db_ayhx
+  username: portfolio_db_ayhx_user
+  password: cv7VmiqU4cWcLaLWXeenKDWa6mBi2wDi
