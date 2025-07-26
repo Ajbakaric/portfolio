@@ -1,3 +1,7 @@
+# Clear all existing records
+Project.delete_all
+
+# Define your projects
 projects = [
   {
     title: "Portfolio",
@@ -29,10 +33,7 @@ projects = [
   }
 ]
 
+# Seed new data
 projects.each do |attrs|
-  Project.find_or_create_by!(title: attrs[:title], link: attrs[:link]) do |project|
-    project.description = attrs[:description]
-    project.image = attrs[:image]
-    project.tags = attrs[:tags]
-  end
+  Project.create!(attrs)
 end
