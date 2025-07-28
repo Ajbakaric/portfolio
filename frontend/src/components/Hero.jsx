@@ -36,7 +36,7 @@ export default function Hero() {
       )}
 
       {/* Spline or Video Background */}
-      <div className={`${loading ? 'invisible' : 'visible'} absolute inset-0 z-0`}>
+      <div className={`${loading ? 'invisible' : 'visible'} absolute inset-0 w-full h-full z-0`}>
         {isMobile ? (
           <video
             autoPlay
@@ -44,7 +44,7 @@ export default function Hero() {
             loop
             playsInline
             onCanPlayThrough={() => setLoading(false)}
-            className="w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover"
           >
             <source src="/videos/spline-background.webm" type="video/webm" />
             <source src="/videos/spline-background.mp4" type="video/mp4" />
