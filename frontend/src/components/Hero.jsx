@@ -7,10 +7,15 @@ export default function Hero() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    const checkIfMobile = () => {
+      const isNarrowScreen = window.innerWidth < 768;
+      const isMobileAgent = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+      setIsMobile(isNarrowScreen || isMobileAgent);
+    };
+
+    checkIfMobile();
+    window.addEventListener('resize', checkIfMobile);
+    return () => window.removeEventListener('resize', checkIfMobile);
   }, []);
 
   return (
