@@ -44,7 +44,7 @@ export default function Hero() {
             loop
             playsInline
             onCanPlayThrough={() => setLoading(false)}
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-auto min-w-full min-h-full object-cover"
           >
             <source src="/videos/spline-background.webm" type="video/webm" />
             <source src="/videos/spline-background.mp4" type="video/mp4" />
