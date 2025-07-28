@@ -51,10 +51,10 @@ export default function Hero() {
             Your browser does not support the video tag.
           </video>
         ) : (
-          <Spline
-            scene="https://prod.spline.design/iVEaathZeu7wOZdg/scene.splinecode"
-            onLoad={() => setLoading(false)}
-          />
+         <Spline
+  scene="/spline/scene.splinecode"
+  onLoad={() => setLoading(false)}
+/>
         )}
       </div>
 
