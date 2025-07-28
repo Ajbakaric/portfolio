@@ -76,7 +76,7 @@ export default function ContactForm() {
               <FaGithub size={20} />
             </a>
             <a
-              href="https://www.linkedin.com/in/austin-bakaric-891994353/"
+              href="https://www.linkedin.com/in/austin-bakaric/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-sky-600 hover:bg-sky-700 text-white transition"

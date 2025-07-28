@@ -1,9 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Spline from '@splinetool/react-spline';
 import { HiChevronDoubleDown } from 'react-icons/hi';
 
 export default function Hero() {
   const [loading, setLoading] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   return (
     <section
@@ -22,14 +30,27 @@ export default function Hero() {
         </div>
       )}
 
-      {/* Spline Background */}
-      <div
-        className={`${loading ? 'invisible' : 'visible'} absolute inset-0 z-0`}
-      >
-        <Spline
-          scene="https://prod.spline.design/iVEaathZeu7wOZdg/scene.splinecode"
-          onLoad={() => setLoading(false)}
-        />
+      {/* Spline or Video Background */}
+      <div className={`${loading ? 'invisible' : 'visible'} absolute inset-0 z-0`}>
+        {isMobile ? (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            onCanPlayThrough={() => setLoading(false)}
+            className="w-full h-full object-cover"
+          >
+            <source src="/videos/spline-background.webm" type="video/webm" />
+            <source src="/videos/spline-background.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        ) : (
+          <Spline
+            scene="https://prod.spline.design/iVEaathZeu7wOZdg/scene.splinecode"
+            onLoad={() => setLoading(false)}
+          />
+        )}
       </div>
 
       {/* Down Arrow */}

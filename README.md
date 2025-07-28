@@ -105,7 +105,7 @@ Swap the Spline scene link in `Hero.jsx`:
 ##  Connect with Me
 
 * 🌐[Portfolio](https://your-deployed-site.com)
-*  [LinkedIn](https://www.linkedin.com/in/austin-bakaric-891994353/)
+*  [LinkedIn](https://www.linkedin.com/in/austin-bakaric/)
 * [GitHub](https://github.com/Ajbakaric)
 *  Email: [bakaric.dev@gmail.com](mailto:bakaric.dev@gmail.com)
 
