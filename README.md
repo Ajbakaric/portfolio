@@ -22,6 +22,9 @@ This project is designed to showcase my skills as a **Fullstack Developer & Crea
 
  **Live Site**: [LIVE DEMO](https://portfolio-x1ib.onrender.com/)
 
+📱 **Mobile Support:**  
+The site is fully responsive, but for best viewing of the animated Hero section, please rotate your device to **landscape mode**. The hero background is optimized for wide-screen aspect ratios and may not fully display in portrait.
+
 **Screenshots**:
 - ![Hero Section Screenshot](/frontend/public/screenshots/hero.png)
 - ![About Section Screenshot](/frontend/public/screenshots/about.png)
