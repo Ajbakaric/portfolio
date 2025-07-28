@@ -38,19 +38,18 @@ export default function Hero() {
       {/* Spline or Video Background */}
       <div className={`${loading ? 'invisible' : 'visible'} absolute inset-0 w-full h-full z-0`}>
         {isMobile ? (
-        <video
-  autoPlay
-  muted
-  loop
-  playsInline
-  onCanPlayThrough={() => setLoading(false)}
-  className="absolute top-0 left-0 w-auto min-w-full min-h-screen object-cover"
->
-  <source src="/videos/spline-background.webm" type="video/webm" />
-  <source src="/videos/spline-background.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
-
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            onCanPlayThrough={() => setLoading(false)}
+            className="fullscreen-video"
+          >
+            <source src="/videos/spline-background.webm" type="video/webm" />
+            <source src="/videos/spline-background.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         ) : (
           <Spline
             scene="https://prod.spline.design/iVEaathZeu7wOZdg/scene.splinecode"

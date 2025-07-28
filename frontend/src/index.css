@@ -50,6 +50,18 @@ html {
   background-attachment: fixed;
   background-size: cover;
 }
+/* Fullscreen video fix for mobile portrait */
+.fullscreen-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  min-width: 100vw;
+  min-height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+}
+
 
 /* Font & color setup */
 :root {
