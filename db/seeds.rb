@@ -1,6 +1,6 @@
 puts "🌱 Seeding database..."
-Project.destroy_all
 
+# Only create if not already in DB to avoid duplication
 projects = [
   {
     title: "Portfolio",
@@ -33,7 +33,12 @@ projects = [
 ]
 
 projects.each do |attrs|
-  Project.create!(attrs)
+  Project.find_or_create_by!(title: attrs[:title]) do |project|
+    project.description = attrs[:description]
+    project.link = attrs[:link]
+    project.image = attrs[:image]
+    project.tags = attrs[:tags]
+  end
 end
 
 puts "✅ Done seeding."
