@@ -12,4 +12,4 @@ cp -a frontend/dist/* public/
 bundle install
 bundle exec rake db:migrate  
 
-Project.delete_all
+Project.destroy_all
