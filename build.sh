@@ -12,4 +12,5 @@ cp -a frontend/dist/* public/
 bundle install
 bundle exec rake db:migrate  
 
-Project.destroy_all
+
+RAILS_ENV=production rails runner "Project.destroy_all"
