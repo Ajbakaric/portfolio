@@ -1,5 +1,5 @@
 puts "🌱 Seeding database..."
-Project.delete_all!
+Project.destroy_all
 
 projects = [
   {
