@@ -9,13 +9,15 @@
   object-fit: cover;
   position: absolute;
   top: 0;
-  left: -100px; /* shifts video to center on small screens */
+  left: 50%;
+  transform: translateX(-50%); /* Perfectly centers video */
   width: 100vw;
   height: 100vh;
-  min-width: 500px; /* ensures full visibility even on narrow devices */
+  min-width: 500px; /* Optional: only if your video needs minimum space */
   z-index: 0;
-  background-color: #eee; /* fallback background for visual balance */
+  background-color:  #eff6ff;
 }
+
 
 .logo {
   height: 6em;
