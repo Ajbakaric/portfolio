@@ -54,3 +54,17 @@
 .read-the-docs {
   color: #888;
 }
+
+@media (max-width: 768px) {
+  .fullscreen-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center top; /* or center -50px if your content is low in the frame */
+    z-index: -1;
+    background-color: black; /* remove white gap */
+  }
+}
