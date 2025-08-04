@@ -1,16 +1,16 @@
 #!/bin/bash
-
-# Fail fast on error
 set -e
 
-# Build frontend
-npm install --prefix frontend
+# Frontend
+npm ci --prefix frontend
 npm run build --prefix frontend
+mkdir -p public
 cp -a frontend/dist/* public/
 
-# Build backend
-bundle install
-bundle exec rake db:migrate  
+# Backend
+bundle install --without development test
 
+# TEMP OK if you can't set a Post-deploy command in Render yet:
+bundle exec rails db:migrate
 
-RAILS_ENV=production rails runner "Project.destroy_all"
+# IMPORTANT: Do NOT destroy data here.
