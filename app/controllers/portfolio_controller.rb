@@ -28,8 +28,7 @@ class PortfolioController < ApplicationController
     end
   end
 
-  # If you want to keep a manual seeding endpoint, leave this;
-  # otherwise you can remove it for safety.
+  # Optional endpoint (if needed)
   def run_seed
     if Rails.env.production?
       load Rails.root.join('db/seeds.rb')
