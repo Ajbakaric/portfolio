@@ -4,17 +4,16 @@ import { motion } from 'framer-motion';
 export default function Projects() {
   const [projects, setProjects] = useState([]);
 
- useEffect(() => {
-  const apiBase = import.meta.env.VITE_API_URL || '';
-  fetch(`${apiBase}/projects`)
-    .then((res) => res.json())
-    .then((data) => {
-      console.log("🔥 /projects response:", data);
-      setProjects(data);
-    })
-    .catch((err) => console.error('Failed to load projects:', err));
-}, []);
-
+  useEffect(() => {
+    const apiBase = import.meta.env.VITE_API_URL || '';
+    fetch(`${apiBase}/projects`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("🔥 /projects response:", data);
+        setProjects(data);
+      })
+      .catch((err) => console.error('Failed to load projects:', err));
+  }, []);
 
   return (
     <section
@@ -60,15 +59,28 @@ export default function Projects() {
                 <h3 className="text-xl font-semibold text-sky-700">{proj.title}</h3>
                 <p className="text-blue-800 text-center">{proj.description}</p>
 
-                <a
-                  href={proj.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 px-4 py-2 rounded bg-sky-600 hover:bg-teal-100 text-white transition"
-                  aria-label={`View project: ${proj.title}`}
-                >
-                  View Project
-                </a>
+                <div className="flex gap-4 mt-4">
+                  <a
+                    href={proj.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 rounded bg-sky-600 hover:bg-teal-100 text-white transition"
+                    aria-label={`View project: ${proj.title}`}
+                  >
+                    View Project
+                  </a>
+                  {proj.repo && (
+                    <a
+                      href={proj.repo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 rounded bg-gray-800 hover:bg-gray-700 text-white transition"
+                      aria-label={`View GitHub repo: ${proj.title}`}
+                    >
+                      GitHub Repo
+                    </a>
+                  )}
+                </div>
               </article>
             </motion.div>
           ))
