@@ -7,6 +7,7 @@ export default function Hero() {
   const [isMobile, setIsMobile] = useState(false);
   const [showMobileNotice, setShowMobileNotice] = useState(false);
   const [allowMobileView, setAllowMobileView] = useState(false);
+  const [webglSupported, setWebglSupported] = useState(true);
 
   useEffect(() => {
     const checkIfMobile = () => {
@@ -16,7 +17,18 @@ export default function Hero() {
       setShowMobileNotice(isNarrowScreen || isMobileAgent);
     };
 
+    const checkWebGLSupport = () => {
+      try {
+        const canvas = document.createElement('canvas');
+        const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+        setWebglSupported(!!gl);
+      } catch (e) {
+        setWebglSupported(false);
+      }
+    };
+
     checkIfMobile();
+    checkWebGLSupport();
     window.addEventListener('resize', checkIfMobile);
     return () => window.removeEventListener('resize', checkIfMobile);
   }, []);
@@ -47,7 +59,17 @@ export default function Hero() {
         </div>
       )}
 
-      {/* Preloader Overlay */}
+      {/* WebGL fallback notice for desktop */}
+      {!isMobile && !webglSupported && (
+        <div className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-black bg-opacity-90 text-white px-6 text-center">
+          <h2 className="text-xl font-bold mb-4">Limited Graphics Support</h2>
+          <p className="mb-6 max-w-md">
+            Your device does not support advanced graphics (WebGL). You’ll be shown a fallback video instead of the interactive 3D experience.
+          </p>
+        </div>
+      )}
+
+      {/* Preloader */}
       {loading && !showMobileNotice && (
         <div className="absolute inset-0 z-40 flex flex-col items-center justify-center bg-black text-white">
           <img
@@ -59,7 +81,7 @@ export default function Hero() {
         </div>
       )}
 
-      {/* Spline or Video Background */}
+      {/* Background Display Logic */}
       <div className={`${loading ? 'invisible' : 'visible'} absolute inset-0 w-full h-full z-0`}>
         {isMobile ? (
           allowMobileView && (
@@ -76,15 +98,28 @@ export default function Hero() {
               Your browser does not support the video tag.
             </video>
           )
-        ) : (
+        ) : webglSupported ? (
           <Spline
             scene="/spline/scene.splinecode"
             onLoad={() => setLoading(false)}
           />
+        ) : (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            onCanPlayThrough={() => setLoading(false)}
+            className="fullscreen-video"
+          >
+            <source src="/videos/spline-webgl-fallback.webm" type="video/webm" />
+            <source src="/videos/spline-webgl-fallback.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         )}
       </div>
 
-      {/* Down Arrow */}
+      {/* Scroll Down Arrow */}
       {!loading && !showMobileNotice && (
         <div className="absolute bottom-6 z-10">
           <button
