@@ -9,7 +9,7 @@ export default function Hero() {
   const [allowMobileView, setAllowMobileView] = useState(false);
   const [webglSupported, setWebglSupported] = useState(true);
 
-  // Check if mobile
+  // Detect mobile
   useEffect(() => {
     const checkIfMobile = () => {
       const isNarrowScreen = window.innerWidth < 768;
@@ -23,7 +23,7 @@ export default function Hero() {
     return () => window.removeEventListener('resize', checkIfMobile);
   }, []);
 
-  // Check WebGL support
+  // Detect WebGL support
   useEffect(() => {
     const canvas = document.createElement('canvas');
     const gl = canvas.getContext('webgl2') || canvas.getContext('webgl');
@@ -49,7 +49,8 @@ export default function Hero() {
         <div className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-black bg-opacity-90 text-white px-6 text-center">
           <h2 className="text-xl font-bold mb-4">Best Viewed on Desktop</h2>
           <p className="mb-6 max-w-md">
-            For the full visual experience, we recommend visiting on a desktop. Some features may be limited or cropped on mobile.
+            For the full visual experience, we recommend visiting on a desktop.
+            Some features may be limited or cropped on mobile.
           </p>
           <button
             onClick={handleContinue}
@@ -60,7 +61,7 @@ export default function Hero() {
         </div>
       )}
 
-      {/* Preloader Overlay */}
+      {/* Preloader */}
       {loading && !showMobileNotice && (
         <div className="absolute inset-0 z-40 flex flex-col items-center justify-center bg-black text-white">
           <img
@@ -84,8 +85,9 @@ export default function Hero() {
               onCanPlayThrough={() => setLoading(false)}
               className="fullscreen-video"
             >
-              <source src="/videos/spline-background.webm" type="video/webm" />
+              {/* Put .mp4 FIRST for iOS support */}
               <source src="/videos/spline-background.mp4" type="video/mp4" />
+              <source src="/videos/spline-background.webm" type="video/webm" />
               Your browser does not support the video tag.
             </video>
           )
@@ -97,14 +99,12 @@ export default function Hero() {
         )}
       </div>
 
-      {/* Down Arrow */}
+      {/* Scroll Arrow */}
       {!loading && !showMobileNotice && (
         <div className="absolute bottom-6 z-10">
           <button
             onClick={() =>
-              document
-                .getElementById('about')
-                .scrollIntoView({ behavior: 'smooth' })
+              document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })
             }
             className="animate-bounce text-white hover:text-indigo-300 transition"
             style={{ fontSize: '30px' }}
