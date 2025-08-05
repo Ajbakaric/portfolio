@@ -9,6 +9,7 @@ export default function Hero() {
   const [allowMobileView, setAllowMobileView] = useState(false);
   const [webglSupported, setWebglSupported] = useState(true);
 
+  // Check if mobile
   useEffect(() => {
     const checkIfMobile = () => {
       const isNarrowScreen = window.innerWidth < 768;
@@ -17,26 +18,26 @@ export default function Hero() {
       setShowMobileNotice(isNarrowScreen || isMobileAgent);
     };
 
-    const checkWebGLSupport = () => {
-      try {
-        const canvas = document.createElement('canvas');
-        const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-        setWebglSupported(!!gl);
-      } catch (e) {
-        setWebglSupported(false);
-      }
-    };
-
     checkIfMobile();
-    checkWebGLSupport();
     window.addEventListener('resize', checkIfMobile);
     return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
+
+  // Check WebGL support
+  useEffect(() => {
+    const canvas = document.createElement('canvas');
+    const gl = canvas.getContext('webgl2') || canvas.getContext('webgl');
+    if (!gl) {
+      setWebglSupported(false);
+    }
   }, []);
 
   const handleContinue = () => {
     setAllowMobileView(true);
     setShowMobileNotice(false);
   };
+
+  const shouldShowVideo = isMobile || !webglSupported;
 
   return (
     <section
@@ -59,17 +60,7 @@ export default function Hero() {
         </div>
       )}
 
-      {/* WebGL fallback notice for desktop */}
-      {!isMobile && !webglSupported && (
-        <div className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-black bg-opacity-90 text-white px-6 text-center">
-          <h2 className="text-xl font-bold mb-4">Limited Graphics Support</h2>
-          <p className="mb-6 max-w-md">
-            Your device does not support advanced graphics (WebGL). You’ll be shown a fallback video instead of the interactive 3D experience.
-          </p>
-        </div>
-      )}
-
-      {/* Preloader */}
+      {/* Preloader Overlay */}
       {loading && !showMobileNotice && (
         <div className="absolute inset-0 z-40 flex flex-col items-center justify-center bg-black text-white">
           <img
@@ -81,9 +72,9 @@ export default function Hero() {
         </div>
       )}
 
-      {/* Background Display Logic */}
+      {/* Spline or fallback video */}
       <div className={`${loading ? 'invisible' : 'visible'} absolute inset-0 w-full h-full z-0`}>
-        {isMobile ? (
+        {shouldShowVideo ? (
           allowMobileView && (
             <video
               autoPlay
@@ -98,28 +89,15 @@ export default function Hero() {
               Your browser does not support the video tag.
             </video>
           )
-        ) : webglSupported ? (
+        ) : (
           <Spline
             scene="/spline/scene.splinecode"
             onLoad={() => setLoading(false)}
           />
-        ) : (
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            onCanPlayThrough={() => setLoading(false)}
-            className="fullscreen-video"
-          >
-            <source src="/videos/spline-webgl-fallback.webm" type="video/webm" />
-            <source src="/videos/spline-webgl-fallback.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
         )}
       </div>
 
-      {/* Scroll Down Arrow */}
+      {/* Down Arrow */}
       {!loading && !showMobileNotice && (
         <div className="absolute bottom-6 z-10">
           <button
