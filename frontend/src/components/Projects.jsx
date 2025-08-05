@@ -59,12 +59,12 @@ export default function Projects() {
                 <h3 className="text-xl font-semibold text-sky-700">{proj.title}</h3>
                 <p className="text-blue-800 text-center">{proj.description}</p>
 
-                <div className="flex gap-4 mt-4">
+                <div className="flex flex-wrap justify-center gap-3 mt-4">
                   <a
                     href={proj.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 rounded bg-sky-600 hover:bg-teal-100 text-white transition"
+                    className="px-4 py-2 rounded bg-sky-600 hover:bg-sky-700 text-white transition"
                     aria-label={`View project: ${proj.title}`}
                   >
                     View Project
