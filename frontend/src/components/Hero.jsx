@@ -21,7 +21,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen w-full overflow-hidden flex flex-col items-center justify-center text-center bg-black text-white"
+      className="relative min-h-screen w-full overflow-hidden flex flex-col items-center justify-center text-center bg-black text-white z-10"
     >
       {/* Preloader Overlay */}
       {loading && (
@@ -51,10 +51,10 @@ export default function Hero() {
             Your browser does not support the video tag.
           </video>
         ) : (
-         <Spline
-  scene="/spline/scene.splinecode"
-  onLoad={() => setLoading(false)}
-/>
+          <Spline
+            scene="/spline/scene.splinecode"
+            onLoad={() => setLoading(false)}
+          />
         )}
       </div>
 
