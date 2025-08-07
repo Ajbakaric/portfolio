@@ -5,15 +5,17 @@ class PortfolioController < ApplicationController
     Rails.logger.info "Projects count: #{projects.count}"
 
     if projects.any?
-      render json: projects.map { |p|
-        {
-          title: p.title,
-          description: p.description,
-          link: p.link,
-          image: p.image,
-          tags: p.tags.is_a?(String) ? p.tags.split(',').map(&:strip) : Array(p.tags)
-        }
-      }
+    render json: projects.map { |p|
+  {
+    title: p.title,
+    description: p.description,
+    link: p.link,
+    image: p.image,
+    tags: p.tags.is_a?(String) ? p.tags.split(',').map(&:strip) : Array(p.tags),
+    repo: p.repo # ✅ this is what was missing
+  }
+}
+
     else
       # Fallback if DB is empty
       render json: [
