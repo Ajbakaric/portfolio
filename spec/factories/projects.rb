@@ -1,7 +1,10 @@
 FactoryBot.define do
   factory :project do
-    title { "Sample Project" }
-    description { "Sample description" }
-    link { "https://example.com" }
+    title { "MyString" }
+    description { "MyText" }
+    link { "MyString" }
+    image { "MyString" }
+    tags { "MyText" }
+    repo { "MyString" }
   end
 end

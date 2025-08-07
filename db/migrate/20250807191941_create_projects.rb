@@ -5,10 +5,10 @@ class CreateProjects < ActiveRecord::Migration[7.1]
       t.text :description
       t.string :link
       t.string :image
-      t.string :tags
+      t.text :tags
+      t.string :repo
 
       t.timestamps
     end
-    add_index :projects, :title, unique: true
   end
 end
