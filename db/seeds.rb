@@ -36,13 +36,14 @@ projects = [
 ]
 
 projects.each do |attrs|
-  Project.find_or_create_by!(title: attrs[:title]) do |p|
-    p.description = attrs[:description]
-    p.link        = attrs[:link]
-    p.repo        = attrs[:repo]
-    p.image       = attrs[:image]
-    p.tags        = attrs[:tags]
-  end
+  project = Project.find_or_initialize_by(title: attrs[:title])
+  project.update!(
+    description: attrs[:description],
+    link: attrs[:link],
+    repo: attrs[:repo],
+    image: attrs[:image],
+    tags: attrs[:tags]
+  )
 end
 
 puts "✅ Done seeding."
