@@ -9,13 +9,18 @@ export default function Hero() {
   const [allowMobileView, setAllowMobileView] = useState(false);
   const [webglSupported, setWebglSupported] = useState(true);
 
-  // Detect mobile
+  // Detect mobile and check localStorage
   useEffect(() => {
     const checkIfMobile = () => {
       const isNarrowScreen = window.innerWidth < 768;
       const isMobileAgent = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
-      setIsMobile(isNarrowScreen || isMobileAgent);
-      setShowMobileNotice(isNarrowScreen || isMobileAgent);
+      const mobileDevice = isNarrowScreen || isMobileAgent;
+
+      setIsMobile(mobileDevice);
+
+      const accepted = localStorage.getItem('allowMobileView') === 'true';
+      setAllowMobileView(accepted);
+      setShowMobileNotice(mobileDevice && !accepted);
     };
 
     checkIfMobile();
@@ -27,12 +32,11 @@ export default function Hero() {
   useEffect(() => {
     const canvas = document.createElement('canvas');
     const gl = canvas.getContext('webgl2') || canvas.getContext('webgl');
-    if (!gl) {
-      setWebglSupported(false);
-    }
+    if (!gl) setWebglSupported(false);
   }, []);
 
   const handleContinue = () => {
+    localStorage.setItem('allowMobileView', 'true');
     setAllowMobileView(true);
     setShowMobileNotice(false);
   };
@@ -44,13 +48,12 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen w-full overflow-hidden flex flex-col items-center justify-center text-center bg-black text-white"
     >
-      {/* Mobile notice modal */}
+      {/* Mobile/Desktop fallback notice */}
       {showMobileNotice && !allowMobileView && (
         <div className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-black bg-opacity-90 text-white px-6 text-center">
           <h2 className="text-xl font-bold mb-4">Best Viewed on Desktop</h2>
           <p className="mb-6 max-w-md">
-            For the full visual experience, we recommend visiting on a desktop.
-            Some features may be limited or cropped on mobile.
+            For the full visual experience, we recommend visiting on a desktop. Some features may be limited or cropped on mobile.
           </p>
           <button
             onClick={handleContinue}
@@ -73,7 +76,7 @@ export default function Hero() {
         </div>
       )}
 
-      {/* Spline or fallback video */}
+      {/* Render Spline scene or fallback video */}
       <div className={`${loading ? 'invisible' : 'visible'} absolute inset-0 w-full h-full z-0`}>
         {shouldShowVideo ? (
           allowMobileView && (
@@ -85,7 +88,6 @@ export default function Hero() {
               onCanPlayThrough={() => setLoading(false)}
               className="fullscreen-video"
             >
-              {/* Put .mp4 FIRST for iOS support */}
               <source src="/videos/spline-background.mp4" type="video/mp4" />
               <source src="/videos/spline-background.webm" type="video/webm" />
               Your browser does not support the video tag.
