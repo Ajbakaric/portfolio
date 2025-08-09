@@ -64,11 +64,11 @@ export default function Hero() {
         </div>
       )}
 
-    {/* Preloader */}
+{/* Preloader */}
 {loading && !showMobileNotice && (
-  <div className="absolute inset-0 z-40 flex flex-col items-center justify-center bg-black text-white">
+  <div className="absolute inset-0 z-40 flex flex-col items-center justify-center bg-transparent text-white">
     <img
-      src="/logo.gif" // ← updated to use your GIF
+      src="/logo.gif" // ← your GIF
       alt="Loading Logo"
       className="w-32 h-32 mb-4"
     />
