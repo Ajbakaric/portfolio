@@ -64,17 +64,18 @@ export default function Hero() {
         </div>
       )}
 
-      {/* Preloader */}
-      {loading && !showMobileNotice && (
-        <div className="absolute inset-0 z-40 flex flex-col items-center justify-center bg-black text-white">
-          <img
-            src="/logo.png"
-            alt="Loading Logo"
-            className="w-24 h-24 animate-spin mb-4"
-          />
-          <p className="text-lg font-semibold tracking-widest">Loading...</p>
-        </div>
-      )}
+    {/* Preloader */}
+{loading && !showMobileNotice && (
+  <div className="absolute inset-0 z-40 flex flex-col items-center justify-center bg-black text-white">
+    <img
+      src="/logo.gif" // ← updated to use your GIF
+      alt="Loading Logo"
+      className="w-32 h-32 mb-4"
+    />
+    <p className="text-lg font-semibold tracking-widest">Loading...</p>
+  </div>
+)}
+
 
       {/* Render Spline scene or fallback video */}
       <div className={`${loading ? 'invisible' : 'visible'} absolute inset-0 w-full h-full z-0`}>
