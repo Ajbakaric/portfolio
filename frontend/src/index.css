@@ -125,3 +125,29 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+/* Stop the browser from dragging media/iframe/canvas snapshots */
+canvas,
+iframe[src*="spline"],
+.spline-viewer,
+video,
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+/* Helpful on touch devices to ensure gestures go through to Spline */
+canvas,
+iframe[src*="spline"],
+.spline-viewer {
+  touch-action: none;
+}
+
+/* If you use this class for the video fallback */
+.fullscreen-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
