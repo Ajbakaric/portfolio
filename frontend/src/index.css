@@ -126,24 +126,25 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* Stop the browser from dragging media/iframe/canvas snapshots */
-canvas,
+/* --- Ghost-drag + selection guards --- */
+spline-viewer,
 iframe[src*="spline"],
-.spline-viewer,
+canvas,
 video,
-img {
-  -webkit-user-drag: none;
-  user-select: none;
+img,
+a img {
+  -webkit-user-drag: none !important;
+  user-select: none !important;
 }
 
-/* Helpful on touch devices to ensure gestures go through to Spline */
-canvas,
+/* Helpful for gesture routing to the 3D scene */
+spline-viewer,
 iframe[src*="spline"],
-.spline-viewer {
-  touch-action: none;
+canvas {
+  touch-action: none !important;
 }
 
-/* If you use this class for the video fallback */
+/* Fullscreen video utility used by the fallback */
 .fullscreen-video {
   position: absolute;
   inset: 0;
@@ -151,3 +152,4 @@ iframe[src*="spline"],
   height: 100%;
   object-fit: cover;
 }
+

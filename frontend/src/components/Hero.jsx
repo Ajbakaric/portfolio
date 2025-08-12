@@ -9,6 +9,7 @@ export default function Hero() {
   const [allowMobileView, setAllowMobileView] = useState(false);
   const [webglSupported, setWebglSupported] = useState(true);
 
+  // Detect mobile and check localStorage
   useEffect(() => {
     const checkIfMobile = () => {
       const isNarrowScreen = window.innerWidth < 768;
@@ -27,6 +28,7 @@ export default function Hero() {
     return () => window.removeEventListener('resize', checkIfMobile);
   }, []);
 
+  // Detect WebGL support
   useEffect(() => {
     const canvas = document.createElement('canvas');
     const gl = canvas.getContext('webgl2') || canvas.getContext('webgl');
@@ -64,7 +66,7 @@ export default function Hero() {
 
       {/* Preloader */}
       {loading && !showMobileNotice && (
-        <div className="absolute inset-0 z-40 flex flex-col items-center justify-center bg-transparent text-white">
+        <div className="absolute inset-0 z-40 flex flex-col items-center justify-center bg-transparent text-white pointer-events-none">
           <img
             src="/logo.gif"
             alt="Loading Logo"
@@ -75,7 +77,7 @@ export default function Hero() {
         </div>
       )}
 
-      {/* Render Spline scene or fallback video */}
+      {/* Spline / Video region */}
       <div
         className={`${loading ? 'invisible pointer-events-none' : 'visible pointer-events-auto'} absolute inset-0 w-full h-full z-0`}
       >
@@ -104,6 +106,7 @@ export default function Hero() {
             <Spline
               scene="/spline/scene.splinecode"
               onLoad={() => setLoading(false)}
+              // Applies to the <spline-viewer> host, which we *can* style
               style={{
                 width: '100%',
                 height: '100%',
@@ -116,11 +119,6 @@ export default function Hero() {
           </div>
         )}
       </div>
-
-      {/* If preloader has transitioned out but still mounted, ensure it doesn't eat clicks */}
-      {!loading && !showMobileNotice && (
-        <div className="absolute inset-0 z-40 pointer-events-none"></div>
-      )}
 
       {/* Scroll Arrow */}
       {!loading && !showMobileNotice && (
